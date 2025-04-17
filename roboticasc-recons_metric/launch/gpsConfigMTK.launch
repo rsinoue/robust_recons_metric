@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Launch GPS -->
+    <node name="config_mtk" pkg="nmea_navsat_driver" type="mtk3339_config.py">
+        <param name="port" value="/dev/cp210x" />
+	<param name="baud" value="9600" />
+        <param name="gps_baud" value="57600" />
+	<param name="gps_rate" value="10" />
+    </node>
+</launch>

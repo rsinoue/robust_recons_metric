@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Launch GPS -->
+    <node name="nmea_odroid" pkg="nmea_navsat_driver" type="nmea_topic_serial_reader.py">
+        <param name="~port" value="/dev/ttyACM0" />
+        <param name="~nmea_sentence" value="/odroid/nmea_sentence" /> 
+    </node>
+    <node name="nmea_topic_odroid" pkg="nmea_navsat_driver" type="nmea_topic_driver.py">
+        <param name="~fix" value="/odroid/fix" /> 
+        <param name="~vel" value="/odroid/vel" /> 
+        <param name="~nmea_sentence" value="/odroid/nmea_sentence" /> 
+        <param name="~time_reference" value="/odroid/time_reference" /> 
+    </node>
+</launch>

@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="rosbag" type="play" name="rosbag" args="-d 2 /home/roberto/bagfiles/Pelican-2016-07-05-15-24-07.bag" output="screen"/>
+  <node pkg="image_transport" type="republish" name="republish" output="screen" args="compressed in:=/camera/image_raw raw out:=/camera/image_raw"/> 
+  <node pkg="recons_metric" type="imu_enu_to_ned" name="imu_enu_to_ned" output="screen" args="in:=/fcu/imu out:=/imu/data"/> 
+</launch>

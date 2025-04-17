@@ -1,0 +1,10 @@
+<!-- IMU and MAG ENU to IMU and MAG NED Launch file -->
+<launch> 
+     <group>  
+     	<remap from="inIMU" to="/lse_xsens_mti/xsens/imu/data"/>
+		<remap from="outIMU" to="imu/data"/> 
+		<remap from="inMAG" to="/lse_xsens_mti/xsens/mag"/>
+		<remap from="outMAG" to="imu/mag"/> 
+		<node pkg="recons_metric" type="imu_enu_to_ned_mod" name="imu_enu_to_ned_mod" output="screen" />
+	 </group>
+</launch>

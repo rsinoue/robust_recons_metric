@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Launch IMU -->
+    <node name="myahrs_driver" pkg="myahrs_driver" type="myahrs_driver">
+        <param name="~port" value="/dev/myahrs"/>
+    </node>
+</launch>

@@ -1,0 +1,6 @@
+<!-- This will start motion estimation node. -->
+<launch>
+	<include file="$(find recons_metric)/launch/imu_myahrs.launch"/>
+	<include file="$(find recons_metric)/launch/gps_UltimateBreakout.launch"/>
+	<include file="$(find usb_cam)/launch/usb_cam-test-video0.launch"/>
+</launch>

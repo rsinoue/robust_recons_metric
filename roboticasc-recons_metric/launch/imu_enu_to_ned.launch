@@ -1,0 +1,10 @@
+<!-- IMU and MAG ENU to IMU and MAG NED Launch file -->
+<launch> 
+     <group>  
+     	<remap from="inIMU" to="/android/inertial"/>
+		<remap from="outIMU" to="imu/data"/> 
+		<remap from="inMAG" to="/android/magnetic"/>
+		<remap from="outMAG" to="mag/data"/> 
+		<node pkg="recons_metric" type="imu_enu_to_ned" name="imu_enu_to_ned" output="screen" />
+	 </group>
+</launch>

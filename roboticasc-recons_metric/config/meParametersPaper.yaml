@@ -1,0 +1,149 @@
+#Gyroscope variances
+varg: [0.0000001, 0.0000001, 0.0000001]
+
+#Gyroscope bias variances
+varbg: [0.0000000001, 0.0000000001, 0.0000000001]
+
+# Gauss-Markov process correlation time
+lambdag: [99.0, 99.0, 99.0]
+
+#Accelerometer variances
+vara: [0.1, 0.1, 0.1]
+
+#Accelerometer bias variances
+varba: [0.0000000001, 0.0000000001, 0.0000000001]
+
+# Gauss-Markov process correlation time
+lambdaa: [100, 100, 100]
+
+#Magnetometer variances
+varm: [0.25,0.25,0.25]
+
+#GPS cartesian position variances
+varpGPS: [0.5, 0.5, 0.5]
+
+#SLAM euler variances
+#vareSLAM: [0.000001, 0.000001, 0.000001]
+#vareSLAM: [0.001, 0.001, 0.001]
+vareSLAM: [0.01, 0.01, 0.01]
+
+varmSLAM: [0.01, 0.01, 0.01]
+
+
+
+#SLAM cartesian position variances
+#varpSLAM: [0.0005, 0.0005, 0.0005]
+#varpSLAM: [0.0075, 0.0075, 0.0075]
+varpSLAM: [0.05, 0.05, 0.05]
+
+Pdiag: #Kalman filter covariance matrix P0
+   size: 15
+   dt: d        
+   data: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+
+# Low-pass filter constants
+alphaLPFMag: 0.0   # Disabled
+alphaLPFGyro: 0.0  # Disabled
+alphaLPFAcc: 0.0   # Disabled
+alphaLPFme: 0.0    # Disabled
+alphaLPFse: 0.75   
+
+magDec: !degrees 12.34
+
+#boundsPercMag: 0.05
+#boundsPercAcc: 0.05
+
+boundsPercMag: 0.05
+boundsPercAcc: 0.05
+
+# Inertial Navigation System
+isINSEnabled: false # Compute position using only IMU
+# INSthreshold: 0.2
+# INSthreshold: 0.5
+INSthreshold: 0.01
+
+
+# Sample Time
+dt: 0.01
+
+# Gravity vector
+autoGravEst: 1
+ge: [0, 0, 9.77795]
+# ge: [0, 0, 9.77397]
+# my_ahrs ge: [0, 0, 9.93662]
+# ge: [0, 0, 9.80665]
+
+# Magnetic field
+autoMagFieldEst: 1
+me: [2.71936, 0, -4.08772]
+#me: [2.06318, 0, -4.65757]
+#me: [4.02445, 0, -14.6635]
+
+# HP filter accelerometer data
+bHP: [0.999968585060383,  -0.999968585060383]
+aHP: [1.000000000000000,  -0.999937170120766]
+
+#LP filter accelerometer data
+bLP: [0.136728735997319,   0.136728735997319]
+aLP: [1.000000000000000,  -0.726542528005361]
+
+
+# Yaw initial condition option
+# 0: Initial condition equal zero
+# 1: Initial condition given by the magnetometer
+# 2: Initial condition given by the GPS // Not implemented 
+
+yawOption: 1
+
+# SLAM scale
+# 0: No scale
+# 1: Fix scale
+# 2: GPS scale estimation // Not working properly
+# 3: Accelerometer scale estimation // Not working properly
+
+scaleSLAMOption: 2
+
+scaleSLAM: 1
+scaleProporThreshold: 0.3 
+scaleStorageNumber: 9 
+slamDispCountSize: 200
+
+autoVelSLAMThreshold : false
+# ORB_SLAM velSLAMThreshold: 0.001
+# velSLAMThreshold: 0.05
+#velSLAMThreshold: 0.01
+velSLAMThreshold: 0.015
+
+
+# error between GPS and SLAM
+errorPosThreshold : 12
+isGPSSLAMThresholdEnabled:  true
+
+
+# Rotation Matrix CGR and Displacement GCd
+# q = [w, x, y, z]'
+# XPS laptop configuration
+CGq: [0.500000000000000,   0.500000000000000,   0.500000000000000,   0.500000000000000]
+GCd: [0.0,   0.0,   0.0]
+
+# Back camera Samsung Galaxy 7 configuration
+#CGq: [0.707106781186548,                   0,                   0,   0.707106781186547]
+#GCd: [0.0,   0.0,   0.0]
+
+# Front camera Samsung Galaxy 7 configuration
+#CGq: [0.000000000000000,   0.707106781186548,   0.707106781186547,   0.000000000000000]
+#GCd: [0.0,   0.0,   0.0]
+
+# Sensors used is pose estimation
+isGyroEnabled: true
+isAccelEnabled: true
+isMagEnabled: true
+# isSLAMEnabled: false # Option disabled
+
+isSLAMOrientationEnabled: true
+isSLAMPositionEnabled: true
+isGPSEnabled: true
+
+
+# Log path
+logPath: /home/kennycaldas/bebop_ws/src/recons_metric/

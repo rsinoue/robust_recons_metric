@@ -1,0 +1,11 @@
+<!-- RTSP Camera -->
+<launch>
+  <arg name="video_stream_url" value ="rtsp://10.17.113.124:5554"/>
+  <node pkg="rocon_rtsp_camera_relay" name="rtsp_camera_relay" type="rocon_rtsp_camera_relay_node">
+     <param name="video_stream_url"    value="$(arg video_stream_url)"/>
+     <!-- <remap from="/rtsp_camera_relay/camera_info" to="/phone1/camera/camera_info" /> -->
+     <!-- <remap from="/rtsp_camera_relay/image" to="/phone1/camera/image_raw" /> -->
+     <!-- <remap from="/rtsp_camera_relay/status" to="/phone1/camera/status" /> -->
+  </node>
+</launch>
+

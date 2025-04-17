@@ -1,0 +1,9 @@
+<!-- This will start motion estimation node. -->
+<launch>
+	<include file="$(find flea3)/launch/single_node.launch" >
+		<arg name="device" value="15508246" />
+		<arg name="fps" value="50" />
+		<arg name="width" value="640" />
+		<arg name="height" value="480" />
+        </include>
+</launch>

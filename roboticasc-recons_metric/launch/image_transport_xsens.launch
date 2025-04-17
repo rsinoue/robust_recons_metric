@@ -1,0 +1,7 @@
+<!-- Launch file -->
+<launch>
+  	<group>
+  	    <remap from="/android/camera_info" to="/camera/camera_info" />
+  		<node pkg="image_transport" type="republish" name="republish" output="screen" args="compressed in:=/android/image raw out:=/camera/image_raw"/>
+  	</group>
+</launch>

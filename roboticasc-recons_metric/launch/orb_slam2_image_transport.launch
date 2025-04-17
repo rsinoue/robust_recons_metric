@@ -1,0 +1,4 @@
+<!-- This will start ORB_SLAM2. -->
+<launch>
+    <node name="ORB_SLAM2" pkg="ORB_SLAM2" type="Mono" args="/home/roberto/repos/ORB_SLAM2/Vocabulary/ORBvoc.txt /home/roberto/repos/ORB_SLAM2/Examples/Monocular/TUM1.yaml /camera/image_raw:=/cameraout/image_raw" output="screen"/> 
+</launch>

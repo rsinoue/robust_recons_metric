@@ -1,0 +1,4 @@
+<!-- This will start ORB_SLAM2. -->
+<launch>
+    <node name="ORB_SLAM2" pkg="ORB_SLAM2" type="Mono" args="/home/roberto/repos/ORB_SLAM2/Vocabulary/ORBvoc.txt /home/roberto/catkin_ws/src/recons_metric/camera/galaxy7edgeback.yaml /camera/image_raw:=/rtsp_camera_relay/image" output="screen"/> 
+</launch>

@@ -1,0 +1,9 @@
+<!-- This will start motion estimation node. -->
+<launch>
+	 <include file="$(find recons_metric)/launch/imu_enu_to_ned.launch"/>
+	 <include file="$(find recons_metric)/launch/image_transport_xsens.launch"/>
+	 <!-- <include file="$(find recons_metric)/launch/orb_slam2.launch"/> -->
+	 <!-- <include file="$(find recons_metric)/launch/lsd_slam.launch"/> -->
+  	 <rosparam command="load" file="$(find recons_metric)/config/meParameters.yaml" ns="recons_metric" />
+     <node name="recons_metric" pkg="recons_metric" type="motion_estimation_node" args="/imu/data:=/imu/data /imu/mag:=/imug/mag /slam/pose:=/orb_slam2/pose /gps/fix:=/fix " output="screen"/>
+</launch>

@@ -1,0 +1,6 @@
+<!-- This will start motion estimation node. -->
+<launch>
+	<include file="$(find recons_metric)/launch/sensors.launch"/>
+	<include file="$(find recons_metric)/launch/lsd_slam.launch"/>
+	<include file="$(find recons_metric)/launch/motion_estimation.launch"/>
+</launch>

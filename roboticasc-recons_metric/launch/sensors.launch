@@ -1,0 +1,9 @@
+<!-- This will start motion estimation node. -->
+<launch>
+	<include file="$(find recons_metric)/launch/imuVN.launch"/>
+	<include file="$(find recons_metric)/launch/chameleon3.launch"/>
+	<include file="$(find recons_metric)/launch/gpsRTK.launch"/>
+	<include file="$(find recons_metric)/launch/gpsMTK.launch"/>
+	<!-- <include file="$(find recons_metric)/launch/lsd_slam_chameleon3.launch"/> -->  
+	<include file="$(find recons_metric)/launch/orb_slam2_chameleon3.launch"/>
+</launch>

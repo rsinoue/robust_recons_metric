@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Launch GPS -->
+
+    <!--node name="recons_metric" pkg="recons_metric" type="gpsdConfigMTK.sh"  output="screen" /--> 
+  
+    <node name="gpsd_clientMTK" pkg="gpsd_client" type="gpsd_client">
+        <param name="port" value="2949" />
+        <param name="check_fix_by_variance" value="false" />
+	<remap from="/fix" to="/mtk/fix" /> 
+	<remap from="/extended_fix" to="/mtk/extended_fix"/>
+    </node>
+</launch>

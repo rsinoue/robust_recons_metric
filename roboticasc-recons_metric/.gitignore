@@ -1,0 +1,14 @@
+# Editor files
+*.sw[op]
+*~
+*.user
+
+# Generated code
+build/
+*.pyc
+
+# Doxygen output
+doxygen/
+
+# Matlab
+matlab/

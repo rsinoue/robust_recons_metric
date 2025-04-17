@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- Launch GPS -->
+    <node name="nmea_rtk" pkg="nmea_navsat_driver" type="nmea_topic_serial_reader.py">
+        <param name="~port" value="/dev/pl2303" />
+	<param name="~baud" value="57600" />
+        <param name="~nmea_sentence" value="/rtk/nmea_sentence" /> 
+    </node>
+    <node name="nmea_topic_rtk" pkg="nmea_navsat_driver" type="nmea_topic_driver.py">
+        <param name="~fix" value="/rtk/fix" /> 
+        <param name="~vel" value="/rtk/vel" /> 
+        <param name="~nmea_sentence" value="/rtk/nmea_sentence" /> 
+        <param name="~time_reference" value="/rtk/time_reference" /> 
+    </node>
+</launch>

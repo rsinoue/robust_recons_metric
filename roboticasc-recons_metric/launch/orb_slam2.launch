@@ -1,0 +1,6 @@
+<!-- This will start ORB_SLAM2. -->
+<launch>
+
+    <!--  <node name="ORB_SLAM2" pkg="ORB_SLAM2" type="Mono" args="/home/roberto/repos/ORB_SLAM2/Vocabulary/ORBvoc.txt /home/roberto/repos/ORB_SLAM2/Examples/Monocular/TUM1.yaml" output="screen"/> -->
+    <node name="ORB_SLAM2" pkg="ORB_SLAM2" type="Mono" args="/home/kennycaldas/ORB_SLAM2/Vocabulary/ORBvoc.txt /home/kennycaldas/bebop_ws/src/recons_metric/camera/chameleon3.yaml" output="screen"/>
+</launch>
